@@ -27,3 +27,27 @@ while True:
         print("Please try again")
     else:
         break
+
+print(__name__)
+def fib(k):
+    if k == 0 or k == 1:
+        return 1
+    else:
+        return fib(k-1) + fib(k-2)
+
+if __name__ == "__main__":
+    print(fib(31))
+with open("encrypted.bin", "rb") as inp:
+    enrypted = inp.read()
+
+print(enrypted)
+
+
+for line in open("passwords.txt", "r"):
+
+    try:
+        print(line)
+        dectxt = simplecrypt.decrypt(line.rstrip(), enrypted)#.decode('utf8')
+        print(dectxt)
+    except simplecrypt.DecryptionException:
+        print("Wrong password")

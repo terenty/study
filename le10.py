@@ -1,9 +1,11 @@
-def f(x, y):
-    try:
-        return x/y
-    except TypeError:
-        print ("Type error")
-    except ZeroDivisionError:
-        print("Zero division")
+class BadName(Exception):
+    pass
 
-print(f(6, 3))
+
+def greet(name):
+    if name[0].isupper():
+        return "Hello, " + name
+    else:
+        raise BadName(name + "is unappropriate name")
+
+print("Import is execution")

@@ -1,16 +1,20 @@
-class NonPositiveError(Exception):
-    pass
+import datetime
+import sys
 
-class PositiveList(list):
-    def append(self, x):
-        if x <= 0:
-            raise NonPositiveError
-        else:
-            super().append(x)
+def read_date():
+    reader = (tuple(map(int, line.split())) for line in sys.stdin)
+    year, month, day = next(reader)
+    return datetime.datetime(year, month, day)
 
-ls=PositiveList()
+def main():
+    date = read_date()
+    print(date)
+    days_add = datetime.timedelta(int(input()))
+    print(days_add)
+    result = date + days_add
+    print(result.year, result.month, result.day)
 
-ls.append(1)
-ls.append(2)
-print(ls)
-ls.append(-1)
+if __name__ == "__main__":
+    main()
+
+
