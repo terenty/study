@@ -14,7 +14,7 @@ import sys
 # print(line)
 
 
-tst=['I need to undersstand the human mind human human', 'humanity human human']
+tst=['I need to undersstand the human mind human human', 'humanity humahuman n human']
 #st = "acc, aac, abc, azc"
 #pat = r"a.c"
 #print(tst)
